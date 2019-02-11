@@ -30,7 +30,7 @@ along with GFFT.  If not, see <http://www.gnu.org/licenses/>.
 import numpy as np
 import warnings
 
-import gridding
+from gfft import gridding
 
 def gfft(inp, in_ax=[], out_ax=[], ftmachine='fft', in_zero_center=True, \
     out_zero_center=True, enforce_hermitian_symmetry=False, W=6, alpha=1.5,\
@@ -120,7 +120,7 @@ def gfft(inp, in_ax=[], out_ax=[], ftmachine='fft', in_zero_center=True, \
     VERSION = "0.2.1"
 
     if verbose:
-        print "gfft v. "+VERSION
+        print("gfft v. "+VERSION)
 
     ############################################################################
     # Set some global variables
@@ -256,8 +256,8 @@ def gfft(inp, in_ax=[], out_ax=[], ftmachine='fft', in_zero_center=True, \
             'number of dimensions!')
 
     if verbose:
-        print 'Requested mode = ' + mode_types[mode]
-        print "Number of dimensions = " + str(N)
+        print('Requested mode = ' + mode_types[mode])
+        print("Number of dimensions = " + str(N))
 
     ############################################################################
     # Figure out which axes should have which transforms applied to them
@@ -364,8 +364,8 @@ def gfft(inp, in_ax=[], out_ax=[], ftmachine='fft', in_zero_center=True, \
     # Print operation summary
 
     if verbose:
-        print ""
-        print "Axis#, FFT, IFFT, ZCIN, ZCOUT, HERM"
+        print("")
+        print("Axis#, FFT, IFFT, ZCIN, ZCOUT, HERM")
 
         for i in range(N):
             pstr = str(N)+', '
@@ -395,7 +395,7 @@ def gfft(inp, in_ax=[], out_ax=[], ftmachine='fft', in_zero_center=True, \
             else:
                 pstr = pstr + 'False'
 
-        print pstr
+        print(pstr)
 
     ############################################################################
     # Do MODE_RR transform
@@ -416,8 +416,8 @@ def gfft(inp, in_ax=[], out_ax=[], ftmachine='fft', in_zero_center=True, \
             out = np.fft.fftshift(out, axes=postshift_axes)
 
         if verbose:
-            print "Done!"
-            print ""
+            print("Done!")
+            print("")
 
         return out
 
@@ -607,8 +607,8 @@ def gfft(inp, in_ax=[], out_ax=[], ftmachine='fft', in_zero_center=True, \
                 dz, Nz, zmin, du, dv, dw, W, alpha)
 
         if verbose:
-            print "Done!"
-            print ""
+            print("Done!")
+            print("")
 
         return out/gc
 
@@ -811,8 +811,8 @@ def gfft(inp, in_ax=[], out_ax=[], ftmachine='fft', in_zero_center=True, \
                 out, du, Nu, umin, dv, Nv, vmin, dw, Nw, wmin, alpha, W)
 
         if verbose:
-            print "Done!"
-            print ""
+            print("Done!")
+            print("")
 
         return out_degrid
 
@@ -1148,8 +1148,8 @@ def gfft(inp, in_ax=[], out_ax=[], ftmachine='fft', in_zero_center=True, \
                 alpha*ymin, dz/alpha, alpha**2*Nz, alpha*zmin, alpha, W)
 
         if verbose:
-            print "Done!"
-            print ""
+            print("Done!")
+            print("")
 
         return out_degrid
 

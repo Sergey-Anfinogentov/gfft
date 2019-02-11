@@ -1,9 +1,12 @@
 GFFT - Generalized Fast Fourier Transformations for Python
 ==========================================================
 
+This repository is a fork of GFFT package adapted to Python 3.
+
 GFFT is a package for performing Fast Fourier Transformations even in the
 case where the data is not defined on a regularly spaced grid. This is commonly
 the case in applications such as radio interferometry and medical imaging.
+
 
 Features include:
 
