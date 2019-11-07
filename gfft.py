@@ -577,7 +577,7 @@ def gfft(inp, in_ax=[], out_ax=[], ftmachine='fft', in_zero_center=True, \
                     if postshift_axes.count(1)>0:
                         yl = tndxy
 
-            out = out[xl:xl+Nx, yl:yl+Ny]
+            out = out[int(xl):int(xl+Nx), int(yl):int(yl+Ny)]
             gc = gridding.get_grid_corr_2d(dx, Nx, xmin, dy, Ny, ymin, \
                 du, dv, W, alpha)
 
